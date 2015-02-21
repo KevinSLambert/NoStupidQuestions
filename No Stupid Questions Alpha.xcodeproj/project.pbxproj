@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3076D7DC1A99165500394F3C /* PlusImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3076D7DB1A99165500394F3C /* PlusImage.png */; };
 		308FFECC1A8D952600735FEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FFECB1A8D952600735FEC /* main.m */; };
 		308FFECF1A8D952600735FEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FFECE1A8D952600735FEC /* AppDelegate.m */; };
 		308FFED21A8D952600735FEC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FFED11A8D952600735FEC /* ViewController.m */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3076D7DB1A99165500394F3C /* PlusImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlusImage.png; sourceTree = "<group>"; };
 		308FFEC61A8D952600735FEC /* No Stupid Questions Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "No Stupid Questions Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		308FFECA1A8D952600735FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		308FFECB1A8D952600735FEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 				308FFED11A8D952600735FEC /* ViewController.m */,
 				308FFED31A8D952600735FEC /* Main.storyboard */,
 				308FFED61A8D952600735FEC /* Images.xcassets */,
+				3076D7DB1A99165500394F3C /* PlusImage.png */,
 				308FFED81A8D952600735FEC /* LaunchScreen.xib */,
 				308FFEC91A8D952600735FEC /* Supporting Files */,
 			);
@@ -258,6 +261,7 @@
 				308FFED51A8D952600735FEC /* Main.storyboard in Resources */,
 				308FFEDA1A8D952600735FEC /* LaunchScreen.xib in Resources */,
 				308FFED71A8D952600735FEC /* Images.xcassets in Resources */,
+				3076D7DC1A99165500394F3C /* PlusImage.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +480,7 @@
 				308FFEEB1A8D952700735FEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		308FFEEC1A8D952700735FEC /* Build configuration list for PBXNativeTarget "No Stupid Questions AlphaTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +489,7 @@
 				308FFEEE1A8D952700735FEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

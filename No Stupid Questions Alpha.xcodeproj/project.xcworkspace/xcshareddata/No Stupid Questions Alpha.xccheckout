@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>76567D11-B08F-4A7F-8B4E-946F60062D38</string>
+	<key>IDESourceControlProjectName</key>
+	<string>No Stupid Questions Alpha</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>EAF309DD184962CD78DD56D49C6D543D8DBE19E0</key>
+		<string>https://github.com/KevinSLambert/NoStupidQuestions.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>No Stupid Questions Alpha.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>EAF309DD184962CD78DD56D49C6D543D8DBE19E0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/KevinSLambert/NoStupidQuestions.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>EAF309DD184962CD78DD56D49C6D543D8DBE19E0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>EAF309DD184962CD78DD56D49C6D543D8DBE19E0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>No%20Stupid%20Questions%20Alpha</string>
+		</dict>
+	</array>
+</dict>
+</plist>
