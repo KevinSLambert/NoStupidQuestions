@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		3076D7DC1A99165500394F3C /* PlusImage.png in Resources */ = {isa = PBXBuildFile; fileRef = 3076D7DB1A99165500394F3C /* PlusImage.png */; };
+		3076D7E61A9D6D4B00394F3C /* StudentLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076D7E51A9D6D4B00394F3C /* StudentLoginViewController.m */; };
+		3076D7E81A9D6EF600394F3C /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3076D7E71A9D6EF600394F3C /* Accounts.framework */; };
+		3076D7EA1A9D6F4400394F3C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3076D7E91A9D6F4400394F3C /* Social.framework */; };
+		3076D7EC1A9D6F4B00394F3C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3076D7EB1A9D6F4B00394F3C /* UIKit.framework */; };
+		3076D7EE1A9D6F5500394F3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3076D7ED1A9D6F5500394F3C /* Foundation.framework */; };
+		3076D7F11A9D774300394F3C /* TeacherLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076D7F01A9D774300394F3C /* TeacherLoginViewController.m */; };
+		3076D7F41A9EB21B00394F3C /* Lesson.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076D7F31A9EB21B00394F3C /* Lesson.m */; };
+		3076D7F71A9EC10700394F3C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076D7F61A9EC10700394F3C /* User.m */; };
+		3076D7FA1A9EC12F00394F3C /* Objectives.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076D7F91A9EC12F00394F3C /* Objectives.m */; };
+		3076D7FD1A9EC14300394F3C /* Questions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076D7FC1A9EC14300394F3C /* Questions.m */; };
+		3076D8001A9EC17900394F3C /* ObjectiveRating.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076D7FF1A9EC17900394F3C /* ObjectiveRating.m */; };
 		308FFECC1A8D952600735FEC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FFECB1A8D952600735FEC /* main.m */; };
 		308FFECF1A8D952600735FEC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FFECE1A8D952600735FEC /* AppDelegate.m */; };
 		308FFED21A8D952600735FEC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 308FFED11A8D952600735FEC /* ViewController.m */; };
@@ -43,6 +54,24 @@
 
 /* Begin PBXFileReference section */
 		3076D7DB1A99165500394F3C /* PlusImage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlusImage.png; sourceTree = "<group>"; };
+		3076D7E41A9D6D4B00394F3C /* StudentLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentLoginViewController.h; sourceTree = "<group>"; };
+		3076D7E51A9D6D4B00394F3C /* StudentLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentLoginViewController.m; sourceTree = "<group>"; };
+		3076D7E71A9D6EF600394F3C /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		3076D7E91A9D6F4400394F3C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		3076D7EB1A9D6F4B00394F3C /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		3076D7ED1A9D6F5500394F3C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		3076D7EF1A9D774300394F3C /* TeacherLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherLoginViewController.h; sourceTree = "<group>"; };
+		3076D7F01A9D774300394F3C /* TeacherLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherLoginViewController.m; sourceTree = "<group>"; };
+		3076D7F21A9EB21B00394F3C /* Lesson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lesson.h; sourceTree = "<group>"; };
+		3076D7F31A9EB21B00394F3C /* Lesson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lesson.m; sourceTree = "<group>"; };
+		3076D7F51A9EC10700394F3C /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		3076D7F61A9EC10700394F3C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		3076D7F81A9EC12F00394F3C /* Objectives.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Objectives.h; sourceTree = "<group>"; };
+		3076D7F91A9EC12F00394F3C /* Objectives.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Objectives.m; sourceTree = "<group>"; };
+		3076D7FB1A9EC14300394F3C /* Questions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Questions.h; sourceTree = "<group>"; };
+		3076D7FC1A9EC14300394F3C /* Questions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Questions.m; sourceTree = "<group>"; };
+		3076D7FE1A9EC17900394F3C /* ObjectiveRating.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjectiveRating.h; sourceTree = "<group>"; };
+		3076D7FF1A9EC17900394F3C /* ObjectiveRating.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObjectiveRating.m; sourceTree = "<group>"; };
 		308FFEC61A8D952600735FEC /* No Stupid Questions Alpha.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "No Stupid Questions Alpha.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		308FFECA1A8D952600735FEC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		308FFECB1A8D952600735FEC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -77,6 +106,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3076D7EE1A9D6F5500394F3C /* Foundation.framework in Frameworks */,
+				3076D7EC1A9D6F4B00394F3C /* UIKit.framework in Frameworks */,
+				3076D7EA1A9D6F4400394F3C /* Social.framework in Frameworks */,
+				3076D7E81A9D6EF600394F3C /* Accounts.framework in Frameworks */,
 				308FFF001A8D971F00735FEC /* AudioToolbox.framework in Frameworks */,
 				308FFF011A8D971F00735FEC /* CFNetwork.framework in Frameworks */,
 				308FFF021A8D971F00735FEC /* CoreGraphics.framework in Frameworks */,
@@ -110,6 +143,10 @@
 				308FFEC81A8D952600735FEC /* No Stupid Questions Alpha */,
 				308FFEE21A8D952700735FEC /* No Stupid Questions AlphaTests */,
 				308FFEC71A8D952600735FEC /* Products */,
+				3076D7ED1A9D6F5500394F3C /* Foundation.framework */,
+				3076D7EB1A9D6F4B00394F3C /* UIKit.framework */,
+				3076D7E91A9D6F4400394F3C /* Social.framework */,
+				3076D7E71A9D6EF600394F3C /* Accounts.framework */,
 				308FFEF51A8D971F00735FEC /* AudioToolbox.framework */,
 				308FFEF61A8D971F00735FEC /* CFNetwork.framework */,
 				308FFEF71A8D971F00735FEC /* CoreGraphics.framework */,
@@ -144,6 +181,20 @@
 				308FFED01A8D952600735FEC /* ViewController.h */,
 				308FFED11A8D952600735FEC /* ViewController.m */,
 				308FFED31A8D952600735FEC /* Main.storyboard */,
+				3076D7E41A9D6D4B00394F3C /* StudentLoginViewController.h */,
+				3076D7E51A9D6D4B00394F3C /* StudentLoginViewController.m */,
+				3076D7EF1A9D774300394F3C /* TeacherLoginViewController.h */,
+				3076D7F01A9D774300394F3C /* TeacherLoginViewController.m */,
+				3076D7F21A9EB21B00394F3C /* Lesson.h */,
+				3076D7F31A9EB21B00394F3C /* Lesson.m */,
+				3076D7F51A9EC10700394F3C /* User.h */,
+				3076D7F61A9EC10700394F3C /* User.m */,
+				3076D7F81A9EC12F00394F3C /* Objectives.h */,
+				3076D7F91A9EC12F00394F3C /* Objectives.m */,
+				3076D7FB1A9EC14300394F3C /* Questions.h */,
+				3076D7FC1A9EC14300394F3C /* Questions.m */,
+				3076D7FE1A9EC17900394F3C /* ObjectiveRating.h */,
+				3076D7FF1A9EC17900394F3C /* ObjectiveRating.m */,
 				308FFED61A8D952600735FEC /* Images.xcassets */,
 				3076D7DB1A99165500394F3C /* PlusImage.png */,
 				308FFED81A8D952600735FEC /* LaunchScreen.xib */,
@@ -280,7 +331,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				308FFED21A8D952600735FEC /* ViewController.m in Sources */,
+				3076D7FD1A9EC14300394F3C /* Questions.m in Sources */,
+				3076D7F71A9EC10700394F3C /* User.m in Sources */,
 				308FFECF1A8D952600735FEC /* AppDelegate.m in Sources */,
+				3076D8001A9EC17900394F3C /* ObjectiveRating.m in Sources */,
+				3076D7E61A9D6D4B00394F3C /* StudentLoginViewController.m in Sources */,
+				3076D7F41A9EB21B00394F3C /* Lesson.m in Sources */,
+				3076D7FA1A9EC12F00394F3C /* Objectives.m in Sources */,
+				3076D7F11A9D774300394F3C /* TeacherLoginViewController.m in Sources */,
 				308FFECC1A8D952600735FEC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
