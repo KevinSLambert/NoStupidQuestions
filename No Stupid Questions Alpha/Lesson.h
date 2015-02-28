@@ -12,5 +12,6 @@
 @interface Lesson : NSObject
 @property (nonatomic, strong) User * user;
 @property (nonatomic, strong) NSString * name;
+@property (nonatomic, strong) NSArray * objectives;
 
 @end

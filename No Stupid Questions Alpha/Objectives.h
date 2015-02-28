@@ -10,7 +10,7 @@
 #import "Lesson.h"
 
 @interface Objectives : NSObject
-@property (nonatomic, strong) NSString * objective;
+@property (nonatomic, strong) NSString * name;
 @property (nonatomic, strong) Lesson * lesson;
 
 @end
