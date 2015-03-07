@@ -24,6 +24,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Create New Lesson";
     // Do any additional setup after loading the view.
 }
 
