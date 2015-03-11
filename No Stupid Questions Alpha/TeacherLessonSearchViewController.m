@@ -7,13 +7,16 @@
 //
 
 #import "TeacherLessonSearchViewController.h"
+#import "TeacherLessonDetailViewController.h"
 #import <Parse/Parse.h>
+#import "NetworkController.h"
 
-@interface TeacherLessonSearchViewController ()<UITableViewDataSource, UISearchBarDelegate>
+@interface TeacherLessonSearchViewController ()<UITableViewDataSource, UISearchBarDelegate, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *lessonSearchBar;
 @property (weak, nonatomic) IBOutlet UITableView *lessonListTableView;
 @property (nonatomic, strong) NSArray *retrievedLessons;
 @property (nonatomic, strong) NSMutableArray *filteredLessons;
+@property (nonatomic, strong) PFObject *selectedObject;
 
 @end
 
@@ -23,16 +26,17 @@
     [super viewDidLoad];
     self.title = @"My Lessons";
     self.lessonListTableView.dataSource = self;
+    self.lessonListTableView.delegate = self;
     PFQuery *query = [PFQuery queryWithClassName:@"Lesson"];
     [query whereKey:@"User" equalTo:[PFUser currentUser]];
-//    self.retrievedLessons = [query findObjects];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        PFObject *firstObject = objects.firstObject;
-//        NSString *lessonName = firstObject[@"Name"];
-//        NSLog(@"%@", lessonName);
         self.retrievedLessons = objects;
         [self.lessonListTableView reloadData];
     }];
+//    NetworkController *networkcontroller = [NetworkController new];
+//    self.retrievedLessons = [networkcontroller retrieveLessonsForCurrentUser];
+//    [self.lessonListTableView reloadData];
+
     // Do any additional setup after loading the view.
 }
 
@@ -64,6 +68,23 @@
     
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    PFObject *object = [self.retrievedLessons objectAtIndex:indexPath.row];
+    self.selectedObject = object;
+//    [self performSegueWithIdentifier:@"lessonDetail" sender:nil];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"lessonDetail"]) {
+        TeacherLessonDetailViewController *detailViewController = [segue destinationViewController];
+        [detailViewController setCurrentLesson:self.selectedObject];
+    }
+    
 }
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {

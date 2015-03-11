@@ -41,7 +41,9 @@
 		308FFF091A8D971F00735FEC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308FFEFE1A8D971F00735FEC /* StoreKit.framework */; };
 		308FFF0A1A8D971F00735FEC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 308FFEFF1A8D971F00735FEC /* SystemConfiguration.framework */; };
 		30FC9B691AA7EB340085468E /* TeacherLessonSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC9B681AA7EB340085468E /* TeacherLessonSearchViewController.m */; };
-		30FC9B6C1AA9319B0085468E /* TeacherLessonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC9B6B1AA9319B0085468E /* TeacherLessonDetailViewController.m */; };
+		30FC9B9C1AAB73FE0085468E /* TeacherLessonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC9B9B1AAB73FE0085468E /* TeacherLessonDetailViewController.m */; };
+		30FC9B9F1AAB89080085468E /* StudentLessonSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC9B9E1AAB89080085468E /* StudentLessonSearchViewController.m */; };
+		30FC9BA21AAB8E170085468E /* NetworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC9BA11AAB8E170085468E /* NetworkController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,8 +106,12 @@
 		308FFEFF1A8D971F00735FEC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		30FC9B671AA7EB340085468E /* TeacherLessonSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherLessonSearchViewController.h; sourceTree = "<group>"; };
 		30FC9B681AA7EB340085468E /* TeacherLessonSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherLessonSearchViewController.m; sourceTree = "<group>"; };
-		30FC9B6A1AA9319B0085468E /* TeacherLessonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherLessonDetailViewController.h; sourceTree = "<group>"; };
-		30FC9B6B1AA9319B0085468E /* TeacherLessonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherLessonDetailViewController.m; sourceTree = "<group>"; };
+		30FC9B9A1AAB73FE0085468E /* TeacherLessonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherLessonDetailViewController.h; sourceTree = "<group>"; };
+		30FC9B9B1AAB73FE0085468E /* TeacherLessonDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherLessonDetailViewController.m; sourceTree = "<group>"; };
+		30FC9B9D1AAB89080085468E /* StudentLessonSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StudentLessonSearchViewController.h; sourceTree = "<group>"; };
+		30FC9B9E1AAB89080085468E /* StudentLessonSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentLessonSearchViewController.m; sourceTree = "<group>"; };
+		30FC9BA01AAB8E170085468E /* NetworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkController.h; sourceTree = "<group>"; };
+		30FC9BA11AAB8E170085468E /* NetworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,9 +193,13 @@
 				308FFECE1A8D952600735FEC /* AppDelegate.m */,
 				308FFED01A8D952600735FEC /* ViewController.h */,
 				308FFED11A8D952600735FEC /* ViewController.m */,
+				30FC9BA01AAB8E170085468E /* NetworkController.h */,
+				30FC9BA11AAB8E170085468E /* NetworkController.m */,
 				308FFED31A8D952600735FEC /* Main.storyboard */,
-				30FC9B6A1AA9319B0085468E /* TeacherLessonDetailViewController.h */,
-				30FC9B6B1AA9319B0085468E /* TeacherLessonDetailViewController.m */,
+				30FC9B9D1AAB89080085468E /* StudentLessonSearchViewController.h */,
+				30FC9B9E1AAB89080085468E /* StudentLessonSearchViewController.m */,
+				30FC9B9A1AAB73FE0085468E /* TeacherLessonDetailViewController.h */,
+				30FC9B9B1AAB73FE0085468E /* TeacherLessonDetailViewController.m */,
 				30FC9B671AA7EB340085468E /* TeacherLessonSearchViewController.h */,
 				30FC9B681AA7EB340085468E /* TeacherLessonSearchViewController.m */,
 				3076D7E41A9D6D4B00394F3C /* StudentLoginViewController.h */,
@@ -345,12 +355,14 @@
 				3076D8031AA239C000394F3C /* LessonCreationViewController.m in Sources */,
 				3076D7FD1A9EC14300394F3C /* Questions.m in Sources */,
 				3076D7F71A9EC10700394F3C /* User.m in Sources */,
+				30FC9BA21AAB8E170085468E /* NetworkController.m in Sources */,
 				308FFECF1A8D952600735FEC /* AppDelegate.m in Sources */,
 				3076D8001A9EC17900394F3C /* ObjectiveRating.m in Sources */,
 				3076D7E61A9D6D4B00394F3C /* StudentLoginViewController.m in Sources */,
 				30FC9B691AA7EB340085468E /* TeacherLessonSearchViewController.m in Sources */,
-				30FC9B6C1AA9319B0085468E /* TeacherLessonDetailViewController.m in Sources */,
+				30FC9B9C1AAB73FE0085468E /* TeacherLessonDetailViewController.m in Sources */,
 				3076D7F41A9EB21B00394F3C /* Lesson.m in Sources */,
+				30FC9B9F1AAB89080085468E /* StudentLessonSearchViewController.m in Sources */,
 				3076D7FA1A9EC12F00394F3C /* Objectives.m in Sources */,
 				3076D7F11A9D774300394F3C /* TeacherLoginViewController.m in Sources */,
 				308FFECC1A8D952600735FEC /* main.m in Sources */,

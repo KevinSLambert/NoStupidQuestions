@@ -2,22 +2,31 @@
 //  TeacherLessonDetailViewController.m
 //  No Stupid Questions Alpha
 //
-//  Created by Kevin Lambert on 3/5/15.
+//  Created by Kevin Lambert on 3/7/15.
 //  Copyright (c) 2015 KSL. All rights reserved.
 //
 
 #import "TeacherLessonDetailViewController.h"
+#import <Parse/Parse.h>
 
 @interface TeacherLessonDetailViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *lessonName;
+@property (weak, nonatomic) IBOutlet UITableView *objectivesTableView;
 
 @end
 
 @implementation TeacherLessonDetailViewController
 
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
+//    PFQuery *query = [PFQuery queryWithClassName:@"Lesson"];
+//    [query getObjectInBackgroundWithId:self.currentLessonID block:^(PFObject *object, NSError *error) {
+//        self.lessonName.text = object[@"Name"];
+//        
+//    }];
+    
+
     // Do any additional setup after loading the view.
 }
 
