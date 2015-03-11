@@ -10,23 +10,38 @@
 #import <Parse/Parse.h> 
 
 @interface NetworkController()
-@property (nonatomic, strong) NSArray *retrievedLessons;
+
 @end
 
 @implementation NetworkController
 
++ (NetworkController *)sharedInstance {
+    static NetworkController *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[NetworkController alloc] init];
+    });
+    return sharedInstance;
+}
 
 
-- (NSArray*)retrieveLessonsForCurrentUser {
+
+- (void)retrieveLessonsForCurrentUserWithCompletion:(void (^)(NSError *, BOOL))completion {
     
     PFQuery *query = [PFQuery queryWithClassName:@"Lesson"];
     [query whereKey:@"User" equalTo:[PFUser currentUser]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        self.retrievedLessons = objects;
+        if (!error) {
+            self.retrievedTeachersLessons = objects;
+            completion(nil, YES);
+        } else {
+            completion(error, NO);
+        }
     }];
-    
-    return self.retrievedLessons;
 }
+
+
+    
     
 //
 //    

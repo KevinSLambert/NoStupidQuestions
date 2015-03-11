@@ -27,15 +27,20 @@
     self.title = @"My Lessons";
     self.lessonListTableView.dataSource = self;
     self.lessonListTableView.delegate = self;
-    PFQuery *query = [PFQuery queryWithClassName:@"Lesson"];
-    [query whereKey:@"User" equalTo:[PFUser currentUser]];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        self.retrievedLessons = objects;
-        [self.lessonListTableView reloadData];
+//    PFQuery *query = [PFQuery queryWithClassName:@"Lesson"];
+//    [query whereKey:@"User" equalTo:[PFUser currentUser]];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        self.retrievedLessons = objects;
+//        [self.lessonListTableView reloadData];
+//    }];
+    [[NetworkController sharedInstance] retrieveLessonsForCurrentUserWithCompletion:^(NSError *error, BOOL completed) {
+        if (!error && completed) {
+            self.retrievedLessons = [NetworkController sharedInstance].retrievedTeachersLessons;
+            [self.lessonListTableView reloadData];
+        } else {
+            NSLog(@"Error retrieving lessons: %@", error);
+        }
     }];
-//    NetworkController *networkcontroller = [NetworkController new];
-//    self.retrievedLessons = [networkcontroller retrieveLessonsForCurrentUser];
-//    [self.lessonListTableView reloadData];
 
     // Do any additional setup after loading the view.
 }
@@ -70,11 +75,11 @@
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     PFObject *object = [self.retrievedLessons objectAtIndex:indexPath.row];
     self.selectedObject = object;
-//    [self performSegueWithIdentifier:@"lessonDetail" sender:nil];
+    [self performSegueWithIdentifier:@"lessonDetail" sender:self];
     
 }
 

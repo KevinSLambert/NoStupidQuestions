@@ -10,6 +10,10 @@
 
 @interface NetworkController : NSObject
 
-- (NSArray*)retrieveLessonsForCurrentUser;
+@property (nonatomic, strong) NSArray *retrievedTeachersLessons;
+
++ (NetworkController *)sharedInstance;
+
+- (void)retrieveLessonsForCurrentUserWithCompletion:(void (^)(NSError *error, BOOL completed))completion;
 
 @end
