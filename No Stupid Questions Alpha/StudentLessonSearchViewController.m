@@ -8,11 +8,14 @@
 
 #import "StudentLessonSearchViewController.h"
 #import <Parse/Parse.h>
+#import "NetworkController.h"
+#import "StudentLessonDetailViewController.h"
 
-@interface StudentLessonSearchViewController () <UITableViewDataSource>
+@interface StudentLessonSearchViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *lessonSearchBar;
 @property (weak, nonatomic) IBOutlet UITableView *lessonTableView;
 @property (nonatomic, strong) NSArray *retrievedLessons;
+@property (nonatomic, strong) PFObject *selectedObject;
 
 
 @end
@@ -22,10 +25,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.lessonTableView.dataSource = self;
-    PFQuery *query = [PFQuery queryWithClassName:@"Lesson"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        self.retrievedLessons = objects;
-        [self.lessonTableView reloadData];
+    self.lessonTableView.delegate = self;
+//    PFQuery *query = [PFQuery queryWithClassName:@"Lesson"];
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        self.retrievedLessons = objects;
+//        [self.lessonTableView reloadData];
+//    }];
+    [[NetworkController sharedInstance] retrieveAllLessons:^(NSError *error, BOOL completed) {
+        if (!error && completed) {
+            self.retrievedLessons = [NetworkController sharedInstance].allLessons;
+            [self.lessonTableView reloadData];
+        } else {
+            NSLog(@"Error retrieving lessons: %@", error);
+        }
     }];
 
     // Do any additional setup after loading the view.
@@ -35,6 +47,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
@@ -49,6 +62,24 @@
     cell.textLabel.text = object[@"Name"];
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    PFObject *object = [self.retrievedLessons objectAtIndex:indexPath.row];
+    self.selectedObject = object;
+    [self performSegueWithIdentifier:@"lessonDetail" sender:self];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"lessonDetail"]) {
+        StudentLessonDetailViewController *detailViewController = [segue destinationViewController];
+        [detailViewController setCurrentLesson:self.selectedObject];
+        [detailViewController setCurrentLessonObjectives:self.selectedObject[@"Objectives"]];
+    }
+    
 }
 
 /*

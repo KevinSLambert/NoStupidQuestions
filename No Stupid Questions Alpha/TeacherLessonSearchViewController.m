@@ -88,6 +88,7 @@
     if ([[segue identifier] isEqualToString:@"lessonDetail"]) {
         TeacherLessonDetailViewController *detailViewController = [segue destinationViewController];
         [detailViewController setCurrentLesson:self.selectedObject];
+        [detailViewController setCurrentLessonObjectives:self.selectedObject[@"Objectives"]];
     }
     
 }

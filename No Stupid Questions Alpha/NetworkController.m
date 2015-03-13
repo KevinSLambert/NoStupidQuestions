@@ -30,6 +30,7 @@
     
     PFQuery *query = [PFQuery queryWithClassName:@"Lesson"];
     [query whereKey:@"User" equalTo:[PFUser currentUser]];
+    [query includeKey:@"Objectives"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         if (!error) {
             self.retrievedTeachersLessons = objects;
@@ -39,6 +40,21 @@
         }
     }];
 }
+
+- (void)retrieveAllLessons:(void (^)(NSError *, BOOL))completion {
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Lesson"];
+    [query includeKey:@"Objectives"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            self.allLessons = objects;
+            completion(nil, YES);
+        } else {
+            completion(error, NO);
+        }
+    }];
+}
+
 
 
     

@@ -1,29 +1,26 @@
 //
-//  TeacherLessonDetailViewController.m
+//  StudentLessonDetailViewController.m
 //  No Stupid Questions Alpha
 //
-//  Created by Kevin Lambert on 3/7/15.
+//  Created by Kevin Lambert on 3/12/15.
 //  Copyright (c) 2015 KSL. All rights reserved.
 //
 
-#import "TeacherLessonDetailViewController.h"
-#import <Parse/Parse.h>
+#import "StudentLessonDetailViewController.h"
 
-@interface TeacherLessonDetailViewController () <UITableViewDataSource>
+@interface StudentLessonDetailViewController () <UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UILabel *lessonName;
 @property (weak, nonatomic) IBOutlet UITableView *objectivesTableView;
 
+
 @end
 
-@implementation TeacherLessonDetailViewController
-
+@implementation StudentLessonDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.objectivesTableView.dataSource = self;
     self.lessonName.text = self.currentLesson[@"Name"];
-    
-
     // Do any additional setup after loading the view.
 }
 

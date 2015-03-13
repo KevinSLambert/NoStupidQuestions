@@ -34,56 +34,61 @@
 }
 - (IBAction)saveLesson:(id)sender {
     PFObject *parseLesson = [PFObject objectWithClassName:@"Lesson"];
+    NSMutableArray *objectives = [NSMutableArray new];
     if (self.lessonName.text.length > 0) {
         parseLesson[@"Name"] = self.lessonName.text;
     } else {
         return;
     }
     parseLesson[@"User"] = [PFUser currentUser];
-    [parseLesson saveInBackground];
+//    [parseLesson saveInBackground];
     
-    PFRelation *relation = [parseLesson relationForKey:@"Objectives"];
+//    PFRelation *relation = [parseLesson relationForKey:@"Objectives"];
     
     if (self.lessonObjectiveOne.text.length > 0) {
         PFObject *objectiveOne = [PFObject objectWithClassName:@"Objectives"];
         objectiveOne[@"Name"] = self.lessonObjectiveOne.text;
-        [objectiveOne saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded){
-                [relation addObject:objectiveOne];
-            } else {
-                NSLog(@"%@",error);
-            }
-            
-        }];
+        [objectives addObject:objectiveOne];
+//        [objectiveOne saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//            if (succeeded){
+//                [relation addObject:objectiveOne];
+//            } else {
+//                NSLog(@"%@",error);
+//            }
+//            
+//        }];
     }
     if (self.lessonObjectiveTwo.text.length > 0) {
         PFObject *objectiveTwo = [PFObject objectWithClassName:@"Objectives"];
-        objectiveTwo[@"Name"] = self.lessonObjectiveOne.text;
-        [objectiveTwo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded){
-                [relation addObject:objectiveTwo];
-            } else {
-                NSLog(@"%@",error);
-            }
-            
-        }];
+        objectiveTwo[@"Name"] = self.lessonObjectiveTwo.text;
+        [objectives addObject:objectiveTwo];
+//        [objectiveTwo saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//            if (succeeded){
+//                [relation addObject:objectiveTwo];
+//            } else {
+//                NSLog(@"%@",error);
+//            }
+//            
+//        }];
     }
     if (self.lessonObjectiveThree.text.length > 0) {
         PFObject *objectiveThree = [PFObject objectWithClassName:@"Objectives"];
-        objectiveThree[@"Name"] = self.lessonObjectiveOne.text;
-        [objectiveThree saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded){
-                [relation addObject:objectiveThree];
-            } else {
-                NSLog(@"%@",error);
-            }
-            
-        }];
+        objectiveThree[@"Name"] = self.lessonObjectiveThree.text;
+        [objectives addObject:objectiveThree];
+//        [objectiveThree saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//            if (succeeded){
+//                [relation addObject:objectiveThree];
+//            } else {
+//                NSLog(@"%@",error);
+//            }
+//            
+//        }];
 
     }
     
     
 //    parseLesson[@"Objectives"] = lesson.objectives;
+    [parseLesson setObject:objectives forKey:@"Objectives"];
     [parseLesson saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
             NSLog(@"Success");
