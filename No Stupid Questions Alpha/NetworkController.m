@@ -55,6 +55,25 @@
     }];
 }
 
+- (void)retrieveQuestionsForObjectiveWithObjectId:(NSString *)objectId completion:(void (^)(NSError *, BOOL))completion {
+    
+    
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Objectives"];
+    [query includeKey:@"Questions"];
+    [query getObjectInBackgroundWithId:objectId block:^(PFObject *object, NSError *error) {
+        
+        if (!error) {
+            self.objectiveQuestions = object[@"Questions"];
+            completion(nil, YES);
+        } else {
+            completion(error, NO);
+        }
+    }];
+    
+}
+
+
 
 
     

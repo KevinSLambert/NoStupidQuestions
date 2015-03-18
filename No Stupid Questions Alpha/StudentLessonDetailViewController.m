@@ -7,10 +7,12 @@
 //
 
 #import "StudentLessonDetailViewController.h"
+#import "StudentObjectiveDetailViewController.h"
+#import "NetworkController.h"
 
-@interface StudentLessonDetailViewController () <UITableViewDataSource>
-@property (weak, nonatomic) IBOutlet UILabel *lessonName;
+@interface StudentLessonDetailViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *objectivesTableView;
+@property (nonatomic, strong) PFObject *selectedObjective;
 
 
 @end
@@ -20,7 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.objectivesTableView.dataSource = self;
-    self.lessonName.text = self.currentLesson[@"Name"];
+    self.objectivesTableView.delegate = self;
+    self.title = self.currentLesson[@"Name"];
     // Do any additional setup after loading the view.
 }
 
@@ -46,6 +49,33 @@
     return cell;
     
 }
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    PFObject *objective = [self.currentLessonObjectives objectAtIndex:indexPath.row];
+    self.selectedObjective = objective;
+    [self performSegueWithIdentifier:@"objectiveDetail" sender:self];
+    
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([[segue identifier] isEqualToString:@"objectiveDetail"]) {
+        StudentObjectiveDetailViewController *detailViewController = [segue destinationViewController];
+        [detailViewController setCurrentObjective:self.selectedObjective];
+        [[NetworkController sharedInstance] retrieveQuestionsForObjectiveWithObjectId:self.selectedObjective.objectId completion:^(NSError *error, BOOL completed) {
+            if (!error && completed) {
+                [detailViewController setCurrentObjectiveQuestions:[NetworkController sharedInstance].objectiveQuestions];
+            } else {
+                NSLog(@"Error retrieving Questions: %@", error);
+            }
+        }];
+
+        }
+        
+}
+    
+
 
 /*
 #pragma mark - Navigation

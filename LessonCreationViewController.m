@@ -8,8 +8,6 @@
 
 #import "LessonCreationViewController.h"
 #import <Parse/Parse.h>
-#import "Lesson.h"
-#import "Objectives.h"
 
 @interface LessonCreationViewController ()
 

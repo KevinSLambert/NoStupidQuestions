@@ -12,10 +12,12 @@
 
 @property (nonatomic, strong) NSArray *retrievedTeachersLessons;
 @property (nonatomic, strong) NSArray *allLessons;
+@property (nonatomic, strong) NSArray *objectiveQuestions;
 
 + (NetworkController *)sharedInstance;
 
 - (void)retrieveLessonsForCurrentUserWithCompletion:(void (^)(NSError *error, BOOL completed))completion;
-- (void)retrieveAllLessons:(void (^)(NSError *, BOOL))completion;
+- (void)retrieveAllLessons:(void (^)(NSError *error, BOOL completed))completion;
+- (void)retrieveQuestionsForObjectiveWithObjectId:(NSString *)objectId completion:(void (^)(NSError *error, BOOL completed))completion;
 
 @end
