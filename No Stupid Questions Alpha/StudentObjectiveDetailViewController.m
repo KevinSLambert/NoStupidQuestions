@@ -7,6 +7,7 @@
 //
 
 #import "StudentObjectiveDetailViewController.h"
+#import "NetworkController.h"
 
 @interface StudentObjectiveDetailViewController ()
 @property (weak, nonatomic) IBOutlet UISegmentedControl *rating;
@@ -19,7 +20,40 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = self.currentObjective[@"Name"];
+    [self.rating addTarget:self action:@selector(saveObjectiveRating) forControlEvents: UIControlEventValueChanged];
+    
     // Do any additional setup after loading the view.
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [[NetworkController sharedInstance] retrieveQuestionsForObjective:self.currentObjective completion:^(NSError *error, BOOL completed, NSArray *questions) {
+        if (!error && completed) {
+            self.currentObjectiveQuestions = questions;
+            // TODO: On teacher screen, reload the table of the questions, e.g. [questionsTable reloadData];
+        } else {
+            NSLog(@"Error retrieving Questions: %@", error);
+        }
+    }];
+    [[NetworkController sharedInstance] retrieveRatingForCurrentUserAndObjective:self.currentObjective completion:^(NSError *error, BOOL completed, PFObject *objectiveRating) {
+        if (!error && completed) {
+            self.currentRatingForCurrentObjective = objectiveRating;
+            // TODO: Set the selected index for the segmented control based on the rating
+            NSNumber *ratingNumber = objectiveRating[@"Rating"];
+            if (ratingNumber) {
+                NSInteger selectedIndex = ratingNumber.integerValue;
+                [self.rating setSelectedSegmentIndex:selectedIndex];
+            } else {
+                [self clearAllRatings];
+            }
+        } else {
+            NSLog(@"Error retrieving Rating: %@", error);
+            [self clearAllRatings];
+        }
+    }];
+}
+
+- (void)clearAllRatings {
+    [self.rating setSelectedSegmentIndex:UISegmentedControlNoSegment];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,6 +109,29 @@
     }];
     
     [self presentViewController:alertController animated:YES completion:nil];
+}
+
+- (void)saveObjectiveRating {
+    
+    if (!self.currentRatingForCurrentObjective) {
+        
+        PFObject *objectiveRating = [PFObject objectWithClassName:@"ObjectiveRating"];
+        self.currentRatingForCurrentObjective = objectiveRating;
+        
+    }
+    NSInteger number = self.rating.selectedSegmentIndex;
+    self.currentRatingForCurrentObjective[@"Rating"] = @(number);
+    self.currentRatingForCurrentObjective[@"User"] = [PFUser currentUser];
+    self.currentRatingForCurrentObjective[@"Objective"] = self.currentObjective;
+    [self.currentObjective setObject:self.currentRatingForCurrentObjective forKey:@"ObjectiveRating"];
+    [self.currentObjective saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"Success");
+        } else {
+            NSLog(@"There was a problem: %@", error);
+        }
+    }];
+    
 }
 
 /*

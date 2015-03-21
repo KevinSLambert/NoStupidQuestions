@@ -63,14 +63,6 @@
     if ([[segue identifier] isEqualToString:@"objectiveDetail"]) {
         StudentObjectiveDetailViewController *detailViewController = [segue destinationViewController];
         [detailViewController setCurrentObjective:self.selectedObjective];
-        [[NetworkController sharedInstance] retrieveQuestionsForObjectiveWithObjectId:self.selectedObjective.objectId completion:^(NSError *error, BOOL completed) {
-            if (!error && completed) {
-                [detailViewController setCurrentObjectiveQuestions:[NetworkController sharedInstance].objectiveQuestions];
-            } else {
-                NSLog(@"Error retrieving Questions: %@", error);
-            }
-        }];
-
         }
         
 }

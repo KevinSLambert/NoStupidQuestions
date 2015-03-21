@@ -7,17 +7,20 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <Parse/Parse.h>
+
 
 @interface NetworkController : NSObject
 
 @property (nonatomic, strong) NSArray *retrievedTeachersLessons;
 @property (nonatomic, strong) NSArray *allLessons;
-@property (nonatomic, strong) NSArray *objectiveQuestions;
 
 + (NetworkController *)sharedInstance;
 
 - (void)retrieveLessonsForCurrentUserWithCompletion:(void (^)(NSError *error, BOOL completed))completion;
 - (void)retrieveAllLessons:(void (^)(NSError *error, BOOL completed))completion;
-- (void)retrieveQuestionsForObjectiveWithObjectId:(NSString *)objectId completion:(void (^)(NSError *error, BOOL completed))completion;
+- (void)retrieveQuestionsForObjective:(PFObject *)objective completion:(void (^)(NSError *error, BOOL completed, NSArray *questions))completion;
+- (void)retrieveRatingForCurrentUserAndObjective:(PFObject *)objective completion:(void (^)(NSError *error, BOOL completed, PFObject *objectiveRating))completion;
+- (void)retrieveRatingsForObjective:(PFObject *)objective completion:(void (^)(NSError *error, BOOL completed, NSArray *ratings))completion;
 
 @end

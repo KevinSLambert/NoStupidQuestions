@@ -81,6 +81,12 @@
     }
     
 }
+- (IBAction)LogOut:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
 
 /*
 #pragma mark - Navigation

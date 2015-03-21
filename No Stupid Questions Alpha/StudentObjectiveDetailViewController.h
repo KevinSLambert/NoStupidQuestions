@@ -12,5 +12,6 @@
 @interface StudentObjectiveDetailViewController : UIViewController
 @property (nonatomic, strong) PFObject *currentObjective;
 @property (nonatomic, strong) NSArray *currentObjectiveQuestions;
+@property (nonatomic, strong) PFObject *currentRatingForCurrentObjective;
 
 @end

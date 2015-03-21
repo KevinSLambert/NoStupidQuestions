@@ -38,6 +38,7 @@
 		30AE791D1AB27CFB008B50FB /* StudentLessonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AE791C1AB27CFB008B50FB /* StudentLessonDetailViewController.m */; };
 		30AE79201AB47C07008B50FB /* StudentObjectiveDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AE791F1AB47C07008B50FB /* StudentObjectiveDetailViewController.m */; };
 		30AE79231AB4B177008B50FB /* TeacherObjectiveDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30AE79221AB4B177008B50FB /* TeacherObjectiveDetailViewController.m */; };
+		30C0987E1ABD17AE009649AF /* TeacherLandingPageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30C0987D1ABD17AE009649AF /* TeacherLandingPageViewController.m */; };
 		30FC9B691AA7EB340085468E /* TeacherLessonSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC9B681AA7EB340085468E /* TeacherLessonSearchViewController.m */; };
 		30FC9B9C1AAB73FE0085468E /* TeacherLessonDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC9B9B1AAB73FE0085468E /* TeacherLessonDetailViewController.m */; };
 		30FC9B9F1AAB89080085468E /* StudentLessonSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30FC9B9E1AAB89080085468E /* StudentLessonSearchViewController.m */; };
@@ -98,6 +99,8 @@
 		30AE791F1AB47C07008B50FB /* StudentObjectiveDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StudentObjectiveDetailViewController.m; sourceTree = "<group>"; };
 		30AE79211AB4B177008B50FB /* TeacherObjectiveDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherObjectiveDetailViewController.h; sourceTree = "<group>"; };
 		30AE79221AB4B177008B50FB /* TeacherObjectiveDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherObjectiveDetailViewController.m; sourceTree = "<group>"; };
+		30C0987C1ABD17AE009649AF /* TeacherLandingPageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherLandingPageViewController.h; sourceTree = "<group>"; };
+		30C0987D1ABD17AE009649AF /* TeacherLandingPageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherLandingPageViewController.m; sourceTree = "<group>"; };
 		30FC9B671AA7EB340085468E /* TeacherLessonSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherLessonSearchViewController.h; sourceTree = "<group>"; };
 		30FC9B681AA7EB340085468E /* TeacherLessonSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TeacherLessonSearchViewController.m; sourceTree = "<group>"; };
 		30FC9B9A1AAB73FE0085468E /* TeacherLessonDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TeacherLessonDetailViewController.h; sourceTree = "<group>"; };
@@ -200,6 +203,8 @@
 				30AE791F1AB47C07008B50FB /* StudentObjectiveDetailViewController.m */,
 				3076D7EF1A9D774300394F3C /* TeacherLoginViewController.h */,
 				3076D7F01A9D774300394F3C /* TeacherLoginViewController.m */,
+				30C0987C1ABD17AE009649AF /* TeacherLandingPageViewController.h */,
+				30C0987D1ABD17AE009649AF /* TeacherLandingPageViewController.m */,
 				3076D8011AA239C000394F3C /* LessonCreationViewController.h */,
 				3076D8021AA239C000394F3C /* LessonCreationViewController.m */,
 				30FC9B671AA7EB340085468E /* TeacherLessonSearchViewController.h */,
@@ -353,6 +358,7 @@
 				30FC9B9C1AAB73FE0085468E /* TeacherLessonDetailViewController.m in Sources */,
 				30FC9B9F1AAB89080085468E /* StudentLessonSearchViewController.m in Sources */,
 				3076D7F11A9D774300394F3C /* TeacherLoginViewController.m in Sources */,
+				30C0987E1ABD17AE009649AF /* TeacherLandingPageViewController.m in Sources */,
 				308FFECC1A8D952600735FEC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

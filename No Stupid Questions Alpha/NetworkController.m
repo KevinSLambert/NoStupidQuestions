@@ -55,23 +55,57 @@
     }];
 }
 
-- (void)retrieveQuestionsForObjectiveWithObjectId:(NSString *)objectId completion:(void (^)(NSError *, BOOL))completion {
-    
-    
+- (void)retrieveQuestionsForObjective:(PFObject *)objective completion:(void (^)(NSError *, BOOL, NSArray *))completion {
     
     PFQuery *query = [PFQuery queryWithClassName:@"Objectives"];
     [query includeKey:@"Questions"];
-    [query getObjectInBackgroundWithId:objectId block:^(PFObject *object, NSError *error) {
+    [query getObjectInBackgroundWithId:objective.objectId block:^(PFObject *object, NSError *error) {
         
         if (!error) {
-            self.objectiveQuestions = object[@"Questions"];
-            completion(nil, YES);
+            NSArray *objectiveQuestions = object[@"Questions"];
+            completion(nil, YES, objectiveQuestions);
         } else {
-            completion(error, NO);
+            completion(error, NO, nil);
         }
     }];
     
 }
+
+- (void)retrieveRatingsForObjective:(PFObject *)objective completion:(void (^)(NSError *, BOOL, NSArray *))completion {
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"Objectives"];
+    [query includeKey:@"ObjectiveRating"];
+    [query getObjectInBackgroundWithId:objective.objectId block:^(PFObject *object, NSError *error) {
+        
+        if (!error) {
+            NSArray *objectiveRatings = object[@"ObjectiveRating"];
+            completion(nil, YES, objectiveRatings);
+        } else {
+            completion(error, NO, nil);
+        }
+    }];
+    
+}
+
+- (void)retrieveRatingForCurrentUserAndObjective:(PFObject *)objective completion:(void (^)(NSError *, BOOL, PFObject *))completion {
+    
+    PFQuery *query = [PFQuery queryWithClassName:@"ObjectiveRating"];
+    [query whereKey:@"User" equalTo:[PFUser currentUser]];
+//    PFObject *objectiveObject = [PFObject objectWithoutDataWithClassName:@"Objectives" objectId:objectId];
+    [query whereKey:@"Objective" equalTo:objective];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (!error) {
+            completion(nil, YES, objects.firstObject);
+        } else {
+            completion(error, NO, nil);
+        }
+    }];
+     
+    
+//    - (instancetype)whereKey:(NSString *)key equalTo:(id)object;
+    
+}
+    
 
 
 
