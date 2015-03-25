@@ -119,7 +119,7 @@
         self.currentRatingForCurrentObjective = objectiveRating;
         
     }
-    NSInteger number = self.rating.selectedSegmentIndex;
+    NSInteger number = self.rating.selectedSegmentIndex + 1;
     self.currentRatingForCurrentObjective[@"Rating"] = @(number);
     self.currentRatingForCurrentObjective[@"User"] = [PFUser currentUser];
     self.currentRatingForCurrentObjective[@"Objective"] = self.currentObjective;

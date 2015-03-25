@@ -73,16 +73,16 @@
 
 - (void)retrieveRatingsForObjective:(PFObject *)objective completion:(void (^)(NSError *, BOOL, NSArray *))completion {
     
-    PFQuery *query = [PFQuery queryWithClassName:@"Objectives"];
-    [query includeKey:@"ObjectiveRating"];
-    [query getObjectInBackgroundWithId:objective.objectId block:^(PFObject *object, NSError *error) {
+    PFQuery *query = [PFQuery queryWithClassName:@"ObjectiveRating"];
+    [query whereKey:@"Objective" equalTo:objective];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
         
         if (!error) {
-            NSArray *objectiveRatings = object[@"ObjectiveRating"];
-            completion(nil, YES, objectiveRatings);
+            completion(nil, YES, objects);
         } else {
             completion(error, NO, nil);
         }
+     
     }];
     
 }

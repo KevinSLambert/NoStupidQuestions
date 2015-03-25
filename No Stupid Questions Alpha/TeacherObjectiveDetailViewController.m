@@ -12,6 +12,7 @@
 @interface TeacherObjectiveDetailViewController ()<UITableViewDataSource>
 @property (weak, nonatomic) IBOutlet UITableView *questionsTableview;
 @property (weak, nonatomic) IBOutlet UILabel *ratingAverage;
+@property (nonatomic, strong) NSArray *ratingsArray;
 
 @end
 
@@ -39,12 +40,18 @@
         
         if (!error && completed) {
             
-            NSArray *numbers = @[@(35), @(55), @(65)];
-            NSNumber *average = [numbers valueForKeyPath:@"@avg.self"];
-            self.ratingAverage.text =  average.stringValue;
+            for (int i = 0; i < ratings.count; i++) {
+                PFObject *currentRating = [ratings objectAtIndex:i];
+                NSNumber *currentNumber = currentRating[@"Rating"];
+                NSMutableArray *mutableRatings = [NSMutableArray arrayWithArray:self.ratingsArray];
+                [mutableRatings addObject:currentNumber];
+                self.ratingsArray = mutableRatings;
+                NSNumber *average = [self.ratingsArray valueForKeyPath:@"@avg.self"];
+                self.ratingAverage.text =  average.stringValue;
+            }
             
         } else {
-            NSLog(@"Error retrieving Questions: %@", error);
+            NSLog(@"Error retrieving Ratings: %@", error);
         }
     }];
     
@@ -65,14 +72,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    UITableViewCell *cell = [self.questionsTableview dequeueReusableCellWithIdentifier:@"MyCell"];
+    UITableViewCell *cell = [self.questionsTableview dequeueReusableCellWithIdentifier:@"CustomCell"];
     PFObject *question = [self.currentObjectiveQuestions objectAtIndex:indexPath.row];
     
-    UILabel *questionLabel = (UILabel *)[cell.contentView viewWithTag:101];
-    questionLabel.text = question[@"Name"];
-    
-    UILabel *userLabel = (UILabel *)[cell.contentView viewWithTag:102];
-    userLabel.text = @"Test User Name";
+    cell.textLabel.text = question[@"Name"];
     
     return cell;
     
