@@ -11,8 +11,7 @@
 #import <Parse/Parse.h>
 #import "NetworkController.h"
 
-@interface TeacherLessonSearchViewController ()<UITableViewDataSource, UISearchBarDelegate, UITableViewDelegate>
-@property (weak, nonatomic) IBOutlet UISearchBar *lessonSearchBar;
+@interface TeacherLessonSearchViewController ()<UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *lessonListTableView;
 @property (nonatomic, strong) NSArray *retrievedLessons;
 @property (nonatomic, strong) NSMutableArray *filteredLessons;
@@ -93,27 +92,8 @@
     
 }
 
--(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
-//    self.filteredLessons = [NSMutableArray new];
-//    
-////    if (searchText.length == 0) {
-////        self.filteredLessons = self.retrievedLessons;
-////    }
-////    else {
-////        
-////        NSPredicate * pred = [NSPredicate predicateWithFormat:@"self CONTAINS[cd] %@", searchText];
-////        self.filteredLessons = [self.retrievedLessons filteredArrayUsingPredicate:pred].mutableCopy;
-////        
-////    }
-//    
-//        for (NSString * url in self.retrievedLessons) {
-//            if ([url containsString:searchText]) {
-//                [self.filteredLessons addObject:url];
-//            }
-//        }
-//    
-//    [self.lessonListTableView reloadData];
-    
+- (NSUInteger)supportedInterfaceOrientations {
+    return 0;
 }
 
 /*

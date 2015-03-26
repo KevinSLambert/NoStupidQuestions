@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -18,31 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qe-OX-eXA">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <color key="backgroundColor" red="0.45754879320000003" green="0.73641390390000006" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="PVw-Nk-u7p"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Student">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="PVw-Nk-u7p"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
-                                    <mask key="constraints">
-                                        <include reference="PVw-Nk-u7p"/>
-                                    </mask>
-                                </variation>
-                                <connections>
-                                    <segue destination="OWy-x7-qvI" kind="show" id="djt-tC-M9s"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bed-f5-IDg">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <color key="backgroundColor" red="0.45754879320000003" green="0.73641390390000006" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -54,11 +29,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="IbI-1k-h8N"/>
-                                    </mask>
-                                </variation>
                                 <variation key="heightClass=regular-widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="IbI-1k-h8N"/>
@@ -84,6 +54,26 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Qe-OX-eXA">
+                                <rect key="frame" x="0.0" y="0.0" width="150" height="41"/>
+                                <color key="backgroundColor" red="0.45754879320000003" green="0.73641390390000006" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="PVw-Nk-u7p"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal" title="Student">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="heightClass=regular-widthClass=compact">
+                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="24"/>
+                                    <mask key="constraints">
+                                        <include reference="PVw-Nk-u7p"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <segue destination="OWy-x7-qvI" kind="show" id="djt-tC-M9s"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -97,25 +87,19 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="3Qe-OX-eXA"/>
                                 <exclude reference="bed-f5-IDg"/>
                                 <exclude reference="Gog-Hz-ync"/>
+                                <exclude reference="3Qe-OX-eXA"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="uRV-YE-FwV"/>
-                                <exclude reference="Gmg-94-sXE"/>
-                                <exclude reference="8wt-O2-9iK"/>
-                                <exclude reference="ZXH-Gd-NMt"/>
                                 <exclude reference="g3X-xE-zbX"/>
-                                <exclude reference="hx8-8e-dan"/>
-                                <exclude reference="zvW-z9-Jho"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="subviews">
-                                <include reference="3Qe-OX-eXA"/>
                                 <include reference="bed-f5-IDg"/>
                                 <include reference="Gog-Hz-ync"/>
+                                <include reference="3Qe-OX-eXA"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="uRV-YE-FwV"/>
@@ -131,7 +115,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="579" y="283.5"/>
+            <point key="canvasLocation" x="579" y="282"/>
         </scene>
         <!--Teacher Login View Controller-->
         <scene sceneID="tIu-Pb-IvG">
@@ -843,15 +827,15 @@
                                 <exclude reference="Xnk-PW-mW1"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="dBI-Ez-2yF"/>
+                                <exclude reference="p1p-Vb-LJr"/>
+                                <exclude reference="7hN-tT-MRO"/>
+                                <exclude reference="wPZ-bO-uET"/>
                                 <exclude reference="201-L8-eFn"/>
                                 <exclude reference="VpG-Kv-D8P"/>
                                 <exclude reference="aVh-C6-3li"/>
                                 <exclude reference="lQE-ZH-vTY"/>
                                 <exclude reference="sZl-Vk-oRu"/>
-                                <exclude reference="dBI-Ez-2yF"/>
-                                <exclude reference="p1p-Vb-LJr"/>
-                                <exclude reference="7hN-tT-MRO"/>
-                                <exclude reference="wPZ-bO-uET"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
@@ -862,13 +846,6 @@
                                 <include reference="Xnk-PW-mW1"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="201-L8-eFn"/>
-                                <include reference="VpG-Kv-D8P"/>
-                                <exclude reference="ajs-sJ-diO"/>
-                                <exclude reference="gkh-ff-ST2"/>
-                                <include reference="aVh-C6-3li"/>
-                                <include reference="lQE-ZH-vTY"/>
-                                <include reference="sZl-Vk-oRu"/>
                                 <include reference="dBI-Ez-2yF"/>
                                 <exclude reference="fwc-CC-ZiO"/>
                                 <include reference="p1p-Vb-LJr"/>
@@ -876,6 +853,13 @@
                                 <exclude reference="HBf-ki-b98"/>
                                 <exclude reference="dvH-mk-N53"/>
                                 <include reference="wPZ-bO-uET"/>
+                                <include reference="201-L8-eFn"/>
+                                <include reference="VpG-Kv-D8P"/>
+                                <exclude reference="ajs-sJ-diO"/>
+                                <exclude reference="gkh-ff-ST2"/>
+                                <include reference="aVh-C6-3li"/>
+                                <include reference="lQE-ZH-vTY"/>
+                                <include reference="sZl-Vk-oRu"/>
                             </mask>
                         </variation>
                     </view>
@@ -1768,7 +1752,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="UgC-Gb-msa"/>
         <segue reference="8rm-C5-Rqy"/>
-        <segue reference="MMQ-Eb-RZE"/>
     </inferredMetricsTieBreakers>
 </document>

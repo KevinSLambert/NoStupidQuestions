@@ -88,6 +88,10 @@
     }];
 }
 
+- (NSUInteger)supportedInterfaceOrientations {
+    return 0;
+}
+
 /*
 #pragma mark - Navigation
 

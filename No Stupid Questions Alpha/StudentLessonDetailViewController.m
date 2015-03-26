@@ -66,6 +66,10 @@
         }
         
 }
+
+- (NSUInteger)supportedInterfaceOrientations {
+    return 0;
+}
     
 
 
